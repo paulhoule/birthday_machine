@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/birthdayBase/birthdayBase.iml" filepath="$PROJECT_DIR$/birthdayBase/birthdayBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/birthdayMachine.iml" filepath="$PROJECT_DIR$/birthdayMachine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/birthdayWebapp/birthdayWebapp.iml" filepath="$PROJECT_DIR$/birthdayWebapp/birthdayWebapp.iml" />
+    </modules>
+  </component>
+</project>
+

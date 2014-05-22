@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-init-method="init" xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+  <context:annotation-config/>
+  <context:component-scan base-package="com.ontology2.adserver3" />
+
+  <bean  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations" value="file:${user.home}/.adserver3/local.properties" />
+    <property name="ignoreResourceNotFound" value="true" />
+  </bean>
+
+  <bean id="adsDataSource" class="com.jolbox.bonecp.BoneCPDataSource">
+    <property name="driverClass" value="com.mysql.jdbc.Driver" />
+    <property name="jdbcUrl" value="${ads.url}" />
+    <property name="username" value="${ads.username}" />
+    <property name="password" value="${ads.password}" />
+  </bean>
+
+
+</beans>

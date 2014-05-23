@@ -15,7 +15,7 @@ public class RunTestQuery extends CommandLineApplication {
     @Override
     protected void _run(String[] strings) throws Exception {
         Query q= QueryFactory.create("select (count(*) as ?cnt) { ?s ?p ?o . }");
-        ResultSet s=sparqlService.createExecutor(q).execSelect();
+        ResultSet s=sparqlService.executor(q).execSelect();
 
         int count=s.next().get("cnt").asLiteral().getInt();
         System.out.println("Count = "+count);

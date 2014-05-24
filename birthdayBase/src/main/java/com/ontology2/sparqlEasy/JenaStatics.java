@@ -31,6 +31,9 @@ public class JenaStatics {
     }
 
     public static Double asDouble(RDFNode n) {
+        if(n==null)
+            return null;
+
         return n.asLiteral().getDouble();
     }
 

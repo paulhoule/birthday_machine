@@ -21,8 +21,8 @@ public class BirthdayModel extends DefaultSparqlClient {
                         "" +
                         "SELECT ?s ?eye {" +
                         "   ?s ns:people.person.date_of_birth ?when ." +
-                        "   ?s public:subjectiveEye3D ?eye ." +
-                        "} ORDER BY DESC(?eye) LIMIT 20",
+                        "   OPTIONAL { ?s public:subjectiveEye3D ?eye . }" +
+                        "} ORDER BY DESC(?eye)",
                 new HashMap<String, Node>() {{
                     put("when", dateNode(when));
                 }}

@@ -1,9 +1,10 @@
-package com.ontology2.birthdayMachine;
+package com.ontology2.sparqlEasy;
 
+import com.hp.hpl.jena.graph.Node;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
-import com.hp.hpl.jena.query.QuerySolutionMap;
-import org.springframework.ui.Model;
+
+import java.util.Map;
 
 //
 // This class ought to be spun out into another package that has a collection of shims for Jena that deal
@@ -17,6 +18,6 @@ import org.springframework.ui.Model;
 public interface SparqlService {
     com.hp.hpl.jena.rdf.model.Model model();
     Query query(String q);
-    Query query(String q,QuerySolutionMap map);
-    QueryExecution executor(Query q);
+    Query query(String q,Map<String,Node> map);
+    QueryExecution execution(Query q);
 }

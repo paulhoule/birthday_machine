@@ -40,4 +40,26 @@ public class JenaStatics {
     public static Double asDouble(QuerySolution s,String key) {
         return asDouble(s.get(key));
     }
+
+    public static Integer asInteger(RDFNode n) {
+        if(n==null)
+            return null;
+
+        return n.asLiteral().getInt();
+    }
+
+    public static Integer asInteger(QuerySolution s,String key) {
+        return asInteger(s.get(key));
+    }
+
+    public static String asString(RDFNode n) {
+        if(n==null)
+            return null;
+
+        return n.asLiteral().getString();
+    }
+
+    public static String asString(QuerySolution s,String key) {
+        return asString(s.get(key));
+    }
 }

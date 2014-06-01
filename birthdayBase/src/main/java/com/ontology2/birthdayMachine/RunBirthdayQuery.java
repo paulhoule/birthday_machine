@@ -21,17 +21,15 @@ public class RunBirthdayQuery extends CommandLineApplication {
 
     @Override
     protected void _run(String[] strings) throws Exception {
-        final Calendar when=new GregorianCalendar(1972,4,25);
+        final Calendar when=new GregorianCalendar(1852,7,6);
         ResultSet r=birthdayModel.lookupDate(when);
 
         while(r.hasNext()) {
-            QuerySolution row=r.next(); {
-                Resource s=asResource(row, "s");
-                Double eye=asDouble(row, "eye");
-                System.out.println(eye+"    "+s);
-            }
+            QuerySolution row=r.next();
+            Resource s=asResource(row, "s");
+            Double eye=asDouble(row, "eye");
+            NameCard card=birthdayModel.lookupNames(s.asNode());
+            System.out.println(eye+"    "+card.getLinks("freebaseUi").get(0)+"    "+card.getName());
         }
-
-
     }
 }
